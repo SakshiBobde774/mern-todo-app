@@ -2,7 +2,9 @@
 
 A modern, full-stack Task Management application built with the MERN stack. This project features secure authentication, symmetric UI design, and advanced note-taking capabilities using Markdown.
 
-🚀 Key FeaturesUser Authentication: Secure Login and Signup using JWT (JSON Web Tokens) and BcryptJS for password hashing.
+🚀 Key Features
+
+User Authentication: Secure Login and Signup using JWT (JSON Web Tokens) and BcryptJS for password hashing.
 
 Full CRUD Functionality: Create, Read, Update, and Delete notes seamlessly.
 
@@ -12,11 +14,21 @@ Modern Symmetric UI: Designed with a focus on symmetry and Glassmorphism for a c
 
 Search & Filter: Real-time search functionality to find notes instantly by title or content.
 
-🛠️ Tech StackLayerTechnologyFrontend
+🛠️ Tech Stack Layer & Technology 
 
-React.js, Axios, React Router, CSS3BackendNode.js, Express.jsDatabaseMongoDB Atlas (NoSQL)SecurityJWT, BcryptJS
+Frontend: React.js, Axios, React Router, CSS3
 
-Clone the repo:Bashgit clone https://github.com/your-username/mern-todo-app.git
+Backend: Node.js, Express.js
+
+Database: MongoDB Atlas (NoSQL) 
+
+Security: JWT, BcryptJS
+
+Clone the repo:
+
+Bash
+
+git clone https://github.com/your-username/mern-todo-app.git
 
 Setup Backend: 
 
