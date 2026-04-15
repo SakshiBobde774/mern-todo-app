@@ -1,0 +1,301 @@
+/* frontend/src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* --- MAIN LAYOUT --- */
+.main-layout {
+  width: 100%;
+  max-width: 1200px; /* Badi screen ke liye spread karein */
+  display: flex;
+  flex-direction: column;
+}
+
+/* New Header Nav Styles */
+.header-nav-new {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.logout-link {
+  color: #feb2b2;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.logout-link:hover {
+    color: #fc8181;
+}
+
+/* Content Container for 2 Columns */
+.content-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left is smaller, right is larger */
+  gap: 30px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* --- LEFT SIDEBAR (INPUT) --- */
+.input-sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-self: flex-start; /* Prevent sidebar stretching */
+  position: sticky; /* Sticky sidebar effect */
+  top: 20px;
+}
+
+.todo-input-title {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.todo-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  resize: vertical; /* Allow user to resize height */
+  line-height: 1.5;
+}
+
+.todo-input-title:focus, .todo-textarea:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+.add-btn-large {
+  width: 100%;
+  padding: 15px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.add-btn-large:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+/* Motivational Quote Box */
+.quote-box {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f7fafc;
+    border-radius: 10px;
+    border-left: 4px solid #764ba2;
+}
+.quote-text {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+}
+
+/* --- RIGHT TASK LIST (GRID) --- */
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Card grid */
+  gap: 20px;
+}
+
+.task-card-new {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+  animation: fadeInNew 0.5s ease;
+}
+.task-card-new:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeInNew {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.delete-btn-card {
+    background: none;
+    border: none;
+    color: #e53e3e;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.delete-btn-card:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.card-body {
+    flex-grow: 1;
+}
+
+.card-description {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    text-align: left;
+    white-space: pre-wrap; /* Isse paragraphs sahi dikhte hain */
+}
+.card-description {
+    color: #333 !important; /* Black color force karne ke liye */
+    display: block !important;
+    visibility: visible !important;
+    min-height: 20px;
+}
+
+/* Table styling for Markdown */
+.card-description table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+.card-description th, .card-description td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.card-footer {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #a0aec0;
+    text-align: right;
+}
+
+.no-tasks-text {
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+    grid-column: 1 / -1; /* Stretch across the grid */
+    margin-top: 50px;
+}
+
+.search-container {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent */
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    backdrop-filter: blur(5px); /* Glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-bar:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn-card {
+    background: none;
+    border: none;
+    color: #4a5568;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.edit-btn-card:hover {
+    color: #667eea;
+}
+
+.update-btn-large {
+    width: 100%;
+    padding: 12px;
+    background: #48bb78; /* Green color for update */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
